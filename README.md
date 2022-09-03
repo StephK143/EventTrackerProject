@@ -1,6 +1,6 @@
 # EventTracker
 
-- [EventTracker](#midtermproject)
+- [EventTracker](#eventtracker)
   - [Description](#description)
   - [Topics](#topics)
   - [How to Run](#how_to_run)
@@ -10,12 +10,13 @@
   - [UML Diagram](#uml_diagram)
   - [Concepts](#concepts)
   - [Challenges and Lessons Learned](#challenges-and-lessons-learned)
-- [MidtermProject](#midtermproject-1)
+- [MidtermProject](#eventtracker)
 
 ## Description
 
 This is a Ghost Tour tracker. Tours can be posted by users and then reviewed. Reviews can have comments added.
 
+- [Back to Top](#eventtracker)
 
 ## Topics
 -   Creating a SQL database and subsequent tables
@@ -30,10 +31,12 @@ This is a Ghost Tour tracker. Tours can be posted by users and then reviewed. Re
 
 
 
+- [Back to Top](#eventtracker)
 
 ##  How to Run
 
 //TODO: URL of deployed app
+- [Back to Top](#eventtracker)
 
 # Technologies
 
@@ -57,6 +60,7 @@ This is a Ghost Tour tracker. Tours can be posted by users and then reviewed. Re
 -   Zoom
 -   macOS on Silicon
 
+- [Back to Top](#eventtracker)
 
 # Concepts
 
@@ -73,6 +77,7 @@ This is a Ghost Tour tracker. Tours can be posted by users and then reviewed. Re
 -   Try/Catch Statements and Exceptions
 -   Web Forms
 
+- [Back to Top](#eventtracker)
 
 ## REST Endpoints
 
@@ -88,11 +93,14 @@ Here are the links for Postman:
 
 
 
-
+- [Back to Top](#eventtracker)
 
 ## UML diagram
 [![](https://mermaid.ink/img/pako:eNqtU8tuwyAQ_JXVnpMf8LX1oYc0Upq0F0sWNRsHyYAFy8Gy_e-FxqniyqkatSshYGd4zCz0WFlJmCG5RyVqJ3Rh4Ctujffbww6GYb22Pezy16f8DTIo8CQ8aGG6Aq_JZ3o_T6VQhkHJed6zU6YGIzQtApXibhHwLHh5idKi_oaMV9NrZNKSlA09PGw3m_x5_4O0M_8-aay4oftEkxaqWUQk-cqplpU1c1za8N4QtE5VVLbkUvPWwPIu0bqychQ7-VsLLyrZBlcmqbcdjjFZ-V-PwGpNhv9abQBcoSYX3ZXxB3xerkA-UTwWU9ElHUVoONV8jNTQJqNyqdg6zI6i8bRCEdi-dKbCjF2gC2n6SxNr_ACZH-YW)](https://mermaid.live/edit#pako:eNqtU8tuwyAQ_JXVnpMf8LX1oYc0Upq0F0sWNRsHyYAFy8Gy_e-FxqniyqkatSshYGd4zCz0WFlJmCG5RyVqJ3Rh4Ctujffbww6GYb22Pezy16f8DTIo8CQ8aGG6Aq_JZ3o_T6VQhkHJed6zU6YGIzQtApXibhHwLHh5idKi_oaMV9NrZNKSlA09PGw3m_x5_4O0M_8-aay4oftEkxaqWUQk-cqplpU1c1za8N4QtE5VVLbkUvPWwPIu0bqychQ7-VsLLyrZBlcmqbcdjjFZ-V-PwGpNhv9abQBcoSYX3ZXxB3xerkA-UTwWU9ElHUVoONV8jNTQJqNyqdg6zI6i8bRCEdi-dKbCjF2gC2n6SxNr_ACZH-YW)
 
-## ## Challenges and Lessons Learned
+- [Back to Top](#eventtracker)
+## Challenges and Lessons Learned
 
 This project was our first with JPA and REST API's.
+
+- [Back to Top](#eventtracker)
