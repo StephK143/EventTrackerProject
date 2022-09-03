@@ -17,12 +17,14 @@ This is a Ghost Tour tracker. Tours can be posted by users and then reviewed. Re
 
 
 
-## Links to files
+##  How to Run
 
-
+//TODO: URL of deployed app
 
 # Technologies
 
+-   REST API
+-   JSON
 -   MySQL 5.7
 -   Spring Web MVC Framework
 -   JPA
@@ -44,11 +46,9 @@ This is a Ghost Tour tracker. Tours can be posted by users and then reviewed. Re
 
 # Concepts
 
-
--   Used Request Mapping
--   Database extraction with Prepared Statements
--   Prepared Statements
--   Post, Redirect, Get
+-   Request Mapping
+-   Get, Post, Delete, Put
+-   Database extraction with Repository
 -   Style Pages - Object Oriented Programming
 -   Class hierarchies
 -   Interfaces
@@ -60,15 +60,17 @@ This is a Ghost Tour tracker. Tours can be posted by users and then reviewed. Re
 -   Web Forms
 
 
-## Postman
+## REST Endpoints
 
 Here are the links for Postman:
 
-|   Functionality             |Return Type                         |Route                         |
-|----------------|-------------------------------|-----------------------------|
-|Gets all tours|`List<Tour>`                   | `GET  http://localhost:8083/api/tours`            |
-|Creates a new comment on a post         |`Tour`            |`POST api/tours/`            |
-|Get comment by name         |`Tour`|`POST api/tours/{id}/comment`|
+|   HTTP Verb Purpose |URI                           |Request Body              |Response Body            | Operation
+|---------------------|------------------------------|--------------------------|-------------------------|------------
+|GET                  | `/api/tours`                 |                          |List of tours            |Read
+|GET                  | `/api/reviews`               |                          |List of reviews          |Read
+|GET                  | `/api/comments`              |                          |List of comments         |Read
+|GET                  |`api/review/{id}`             |                          |View review by id        |Read
+|POST                 |`api/tours/{id}/reviews`      |JSON for new Tour         |Create review by tour id |Create
 
 
 
@@ -77,6 +79,6 @@ Here are the links for Postman:
 ## UML diagram
 [![](https://mermaid.ink/img/pako:eNqtU8tuwyAQ_JXVnpMf8LX1oYc0Upq0F0sWNRsHyYAFy8Gy_e-FxqniyqkatSshYGd4zCz0WFlJmCG5RyVqJ3Rh4Ctujffbww6GYb22Pezy16f8DTIo8CQ8aGG6Aq_JZ3o_T6VQhkHJed6zU6YGIzQtApXibhHwLHh5idKi_oaMV9NrZNKSlA09PGw3m_x5_4O0M_8-aay4oftEkxaqWUQk-cqplpU1c1za8N4QtE5VVLbkUvPWwPIu0bqychQ7-VsLLyrZBlcmqbcdjjFZ-V-PwGpNhv9abQBcoSYX3ZXxB3xerkA-UTwWU9ElHUVoONV8jNTQJqNyqdg6zI6i8bRCEdi-dKbCjF2gC2n6SxNr_ACZH-YW)](https://mermaid.live/edit#pako:eNqtU8tuwyAQ_JXVnpMf8LX1oYc0Upq0F0sWNRsHyYAFy8Gy_e-FxqniyqkatSshYGd4zCz0WFlJmCG5RyVqJ3Rh4Ctujffbww6GYb22Pezy16f8DTIo8CQ8aGG6Aq_JZ3o_T6VQhkHJed6zU6YGIzQtApXibhHwLHh5idKi_oaMV9NrZNKSlA09PGw3m_x5_4O0M_8-aay4oftEkxaqWUQk-cqplpU1c1za8N4QtE5VVLbkUvPWwPIu0bqychQ7-VsLLyrZBlcmqbcdjjFZ-V-PwGpNhv9abQBcoSYX3ZXxB3xerkA-UTwWU9ElHUVoONV8jNTQJqNyqdg6zI6i8bRCEdi-dKbCjF2gC2n6SxNr_ACZH-YW)
 
-## ## Challenges and What I Learned
+## ## Challenges and Lessons Learned
 
 This project was our first with JPA and REST API's.

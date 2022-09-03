@@ -35,7 +35,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `review` ;
 
 CREATE TABLE IF NOT EXISTS `review` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(100) NULL,
   `name` VARCHAR(45) NULL,
   `email` VARCHAR(100) NULL,
@@ -60,7 +60,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `comment` ;
 
 CREATE TABLE IF NOT EXISTS `comment` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `review_id` INT NOT NULL,
   `name` VARCHAR(100) NOT NULL,
   `comment` VARCHAR(1000) NULL,

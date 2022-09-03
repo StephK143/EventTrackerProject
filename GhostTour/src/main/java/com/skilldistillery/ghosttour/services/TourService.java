@@ -10,4 +10,6 @@ import com.skilldistillery.ghosttour.entities.Tour;
 public interface TourService {
 
 	List<Tour> listAllTours();
+	
+	
 }
