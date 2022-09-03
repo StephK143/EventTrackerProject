@@ -10,7 +10,7 @@
   - [UML Diagram](#uml_diagram)
   - [Concepts](#concepts)
   - [Challenges and Lessons Learned](#challenges-and-lessons-learned)
-- [MidtermProject](#eventtracker)
+
 
 ## Description
 
