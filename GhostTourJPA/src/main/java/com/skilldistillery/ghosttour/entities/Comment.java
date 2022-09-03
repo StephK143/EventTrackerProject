@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Comment {
@@ -16,6 +18,10 @@ public class Comment {
 	private String comment;
 	
 	private String image;
+	
+	@ManyToOne
+	@JoinColumn(name="review_id")
+	private Review review;
 
 	public Comment() {
 		super();
@@ -51,6 +57,14 @@ public class Comment {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public Review getReview() {
+		return review;
+	}
+
+	public void setReview(Review review) {
+		this.review = review;
 	}
 
 	@Override

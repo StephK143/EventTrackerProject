@@ -64,11 +64,11 @@ This is a Ghost Tour tracker. Tours can be posted by users and then reviewed. Re
 
 Here are the links for Postman:
 
-|                |ASCII                          |HTML                         |
+|   Functionality             |Return Type                         |Route                         |
 |----------------|-------------------------------|-----------------------------|
-|List All Tours|`'Isn't this fun?'`            |'Isn't this fun?'            |
-|Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
-|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
+|Gets all tours|`List<Tour>`                   | `GET  http://localhost:8083/api/tours`            |
+|Creates a new comment on a post         |`Tour`            |`POST api/tours/`            |
+|Get comment by name         |`Tour`|`POST api/tours/{id}/comment`|
 
 
 
@@ -79,4 +79,4 @@ Here are the links for Postman:
 
 ## ## Challenges and What I Learned
 
-This project was our first with JPA and REST API's. 
+This project was our first with JPA and REST API's.

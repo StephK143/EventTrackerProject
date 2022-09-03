@@ -1,9 +1,12 @@
 package com.skilldistillery.ghosttour.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Tour {
@@ -17,6 +20,10 @@ public class Tour {
 	private String city;
 	
 	private String state;
+	
+	@OneToMany(mappedBy="tour")
+	List<Review> reviews;
+	
 
 	public Tour() {
 		super();
@@ -52,6 +59,14 @@ public class Tour {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public List<Review> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(List<Review> reviews) {
+		this.reviews = reviews;
 	}
 
 	@Override

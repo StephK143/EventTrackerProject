@@ -14,11 +14,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class TourTest {
+class ReviewTest {
 
 	private static EntityManagerFactory emf;
 	private static EntityManager em;
-	private Tour tour;
+	private Review review;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -33,27 +33,33 @@ class TourTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		tour = em.find(Tour.class, 1);
+		review = em.find(Review.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
-		tour = null;
+		review = null;
 	}
 	
 	@Test
 	void test_Tour_basic_entity_mapping() {
-		assertNotNull(tour);
-		assertEquals("Stanley Hotel Tour", tour.getName());
+		assertNotNull(review);
+		assertEquals("Fred Fredette", review.getName());
+		assertEquals("What a creepy hotel!", review.getTitle());
 	}
 	
 	@Test
-	void test_Tour_Review_OneToMany_Mapping() {
-		assertNotNull(tour);
-		assertNotNull(tour.getReviews());
-		assertTrue(tour.getReviews().size() > 0);
+	void test_Review_Tour_ManyToOne_mapping() {
+		assertNotNull(review);
+		assertEquals("Estes Park", review.getTour().getCity());
 		
+	}
+	@Test
+	void test_Review_Comment_OneToMany_mapping() {
+		assertNotNull(review);
+		assertNotNull(review.getComments());
+		assertTrue(review.getComments().size() > 0);
 		
 	}
 

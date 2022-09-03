@@ -1,12 +1,16 @@
 package com.skilldistillery.ghosttour.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Review {
@@ -30,6 +34,13 @@ public class Review {
 	
 	@Column(name="date_created")
 	private LocalDateTime dateCreated;
+	
+	@ManyToOne
+	@JoinColumn(name="tour_id")
+	private Tour tour;
+
+	@OneToMany(mappedBy="review")
+	private List<Comment> comments;
 
 	public Review() {
 		super();
@@ -97,6 +108,22 @@ public class Review {
 
 	public void setDateCreated(LocalDateTime dateCreated) {
 		this.dateCreated = dateCreated;
+	}
+	public Tour getTour() {
+		return tour;
+	}
+
+	public void setTour(Tour tour) {
+		this.tour = tour;
+	}
+	
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
 	}
 
 	@Override

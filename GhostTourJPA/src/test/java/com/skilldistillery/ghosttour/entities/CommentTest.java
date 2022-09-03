@@ -2,7 +2,6 @@ package com.skilldistillery.ghosttour.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -14,11 +13,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class TourTest {
+class CommentTest {
 
 	private static EntityManagerFactory emf;
 	private static EntityManager em;
-	private Tour tour;
+	private Comment comment;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -33,27 +32,26 @@ class TourTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		tour = em.find(Tour.class, 1);
+		comment = em.find(Comment.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
-		tour = null;
+		comment = null;
 	}
 	
 	@Test
 	void test_Tour_basic_entity_mapping() {
-		assertNotNull(tour);
-		assertEquals("Stanley Hotel Tour", tour.getName());
+		assertNotNull(comment);
+		assertEquals("Pebbles Bam", comment.getName());
+		assertEquals("I agree! so great", comment.getComment());
 	}
 	
 	@Test
-	void test_Tour_Review_OneToMany_Mapping() {
-		assertNotNull(tour);
-		assertNotNull(tour.getReviews());
-		assertTrue(tour.getReviews().size() > 0);
-		
+	void test_Comment_Review_ManyToOne_mapping() {
+		assertNotNull(comment);
+		assertEquals("What a creepy hotel!", comment.getReview().getTitle());
 		
 	}
 
