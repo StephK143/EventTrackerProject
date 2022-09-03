@@ -1,5 +1,19 @@
 # EventTracker
 
+- [EventTracker](#midtermproject)
+  - [Description](#description)
+  - [Topics](#topics)
+  - [How to Run](#how_to_run)
+  - [Technologies](#technologies)
+  - [Concepts](#concepts)
+  - [Rest Endpoints](#rest_endpoints)
+  - [UML Diagram](#uml_diagram)
+  - [Concepts](#concepts)
+  - [Challenges and Lessons Learned](#challenges-and-lessons-learned)
+- [MidtermProject](#midtermproject-1)
+
+## Description
+
 This is a Ghost Tour tracker. Tours can be posted by users and then reviewed. Reviews can have comments added.
 
 
