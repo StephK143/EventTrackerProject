@@ -12,11 +12,11 @@ import com.skilldistillery.ghosttour.repositories.TourRepository;
 public class TourServiceImpl implements TourService {
 
 	@Autowired
-	private TourRepository repo;
+	private TourRepository tourRepo;
 	
 	@Override
 	public List<Tour> listAllTours() {
-		return repo.findAll();
+		return tourRepo.findAll();
 	}
 
 }

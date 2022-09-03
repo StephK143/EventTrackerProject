@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Comment {
 	@Id
@@ -19,6 +21,7 @@ public class Comment {
 	
 	private String image;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="review_id")
 	private Review review;

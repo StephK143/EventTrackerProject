@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Tour {
 
@@ -21,6 +23,7 @@ public class Tour {
 	
 	private String state;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="tour")
 	List<Review> reviews;
 	

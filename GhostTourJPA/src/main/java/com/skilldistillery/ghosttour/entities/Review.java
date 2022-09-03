@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Review {
 	
@@ -35,10 +37,12 @@ public class Review {
 	@Column(name="date_created")
 	private LocalDateTime dateCreated;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="tour_id")
 	private Tour tour;
-
+	
+	@JsonIgnore
 	@OneToMany(mappedBy="review")
 	private List<Comment> comments;
 
