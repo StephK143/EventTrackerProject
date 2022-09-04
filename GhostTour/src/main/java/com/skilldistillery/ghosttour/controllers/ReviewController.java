@@ -8,15 +8,14 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.skilldistillery.ghosttour.entities.Review;
-import com.skilldistillery.ghosttour.repositories.ReviewRepository;
 import com.skilldistillery.ghosttour.services.ReviewService;
 
 @RestController
@@ -26,8 +25,6 @@ public class ReviewController {
 	@Autowired
 	private ReviewService reviewServ;
 
-	@Autowired
-	private ReviewRepository reviewRepo;
 
 	@GetMapping("reviews")
 	public List<Review> listAllReviews() {
@@ -44,7 +41,9 @@ public class ReviewController {
 	}
 
 	@PostMapping("tours/{tourId}/reviews")
-	public Review addReviewToTour(@PathVariable int tourId, @RequestBody Review review, HttpServletResponse resp,
+	public Review addReviewToTour(@PathVariable int tourId,
+			@RequestBody Review review, 
+			HttpServletResponse resp,
 			HttpServletRequest req) {
 		review = reviewServ.createReviewForTour(tourId, review);
 		try {
@@ -61,19 +60,22 @@ public class ReviewController {
 		return review;
 	}
 
-	@PatchMapping("reviews/{reviewId}")
-	public Review updateReview(@PathVariable int id, @RequestBody Review review, HttpServletResponse resp) {
+	@PutMapping("reviews/{reviewId}")
+	public Review updateReview(
+			@RequestBody Review review, 
+			@PathVariable int reviewId, 
+			HttpServletResponse resp) {
 		Review updated = null;
 
 		try {
-			updated = reviewServ.update(review, id);
+			updated = reviewServ.update(review, reviewId);
 
 		} catch (Exception e) {
 			e.printStackTrace();
 			resp.setStatus(400);
 		}
 
-		return review;
+		return updated;
 
 	}
 	

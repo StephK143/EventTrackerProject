@@ -84,15 +84,16 @@ This is a Ghost Tour tracker. Tours can be posted by users and then reviewed. Re
 
 Here are the links for Postman:
 
-|   HTTP Verb Purpose |URI                           |Request Body              |Response Body            | Operation
-|---------------------|------------------------------|--------------------------|-------------------------|------------
-|GET                  | `/api/tours`                 |                          |List of tours            |Read
-|GET                  | `/api/reviews`               |                          |List of reviews          |Read
-|GET                  | `/api/comments`              |                          |List of comments         |Read
-|GET                  |`api/review/{id}`             |                          |View review by id        |Read
-|POST                 |`api/tours/{id}/reviews`      |JSON for new Tour         |Create review by tour id |Create
-|PATCH                |`api/reviews/{id}`            |JSON to update Review     |Update review            |Update
-|DELETE               |`api/reviews/{id}`            |                          |Delete review            |Delete  
+|   HTTP Verb Purpose |URI                            |Request Body              |Response Body            | Operation
+|---------------------|-------------------------------|--------------------------|-------------------------|-----------
+|GET                  | `/api/tours`                  |                          |List of tours            |Read
+|GET                  | `/api/reviews`                |                          |List of reviews          |Read
+|GET                  | `/api/comments`               |                          |List of comments         |Read
+|GET                  |`/api/review/{id}`             |                          |View review by id        |Read
+|POST                 |`/api/tours/{tourId}/reviews`  |JSON for new review       |Create review by tour id |Create
+|PUT                  |`/api/reviews/{reviewId}`      |JSON to update Review     |Update review            |Update
+|DELETE               |`/api/reviews/{id}`            |                          |Delete review            |Delete  
+|PUT                  |`/api/comments/{commentId}`    |JSON to update comments   |Update comment           |update
 
 
 

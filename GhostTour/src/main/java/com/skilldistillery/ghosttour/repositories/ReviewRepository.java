@@ -8,8 +8,5 @@ import com.skilldistillery.ghosttour.entities.Review;
 
 public interface ReviewRepository extends JpaRepository<Review, Integer> {
 
-
-	
-	
 	
 }

@@ -26,8 +26,6 @@ public class ReviewServiceImpl implements ReviewService {
 		return reviewRepo.findAll();
 	}
 
-	
-
 	@Override
 	public Review createReviewForTour(int tourId, Review review) {
 		Optional<Tour> tourOp = tourRepo.findById(tourId);
@@ -47,10 +45,9 @@ public class ReviewServiceImpl implements ReviewService {
 		if (existing == null) {
 			return null;
 		}
-		if (review.getTitle() == null) {
-			existing.setTitle(review.getTitle());
-		}
-		existing.setName(review.getDescription());
+
+		existing.setTitle(review.getTitle());
+		existing.setName(review.getName());
 		existing.setEmail(review.getEmail());
 		existing.setDescription(review.getDescription());
 		existing.setPricePerPerson(review.getPricePerPerson());

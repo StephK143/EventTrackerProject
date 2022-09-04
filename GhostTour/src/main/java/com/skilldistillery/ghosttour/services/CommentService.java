@@ -10,4 +10,12 @@ import com.skilldistillery.ghosttour.entities.Comment;
 public interface CommentService {
 
 	List<Comment> listAllComments();
+	
+	Comment createCommentforReview(int reviewId, Comment comment);
+		
+	Comment updateComment(Comment comment, int reviewId);
+	
+	Comment findById(int id);
+	
+	boolean deleteComment(int id);
 }
