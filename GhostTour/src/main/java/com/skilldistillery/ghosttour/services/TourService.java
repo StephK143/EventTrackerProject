@@ -10,6 +10,10 @@ import com.skilldistillery.ghosttour.entities.Tour;
 public interface TourService {
 
 	List<Tour> listAllTours();
+
+	Tour createTour(Tour tour);
+
+	Boolean delete(int id);
 	
 	
 }

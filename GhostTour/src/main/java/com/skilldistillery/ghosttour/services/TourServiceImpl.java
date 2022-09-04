@@ -18,5 +18,19 @@ public class TourServiceImpl implements TourService {
 	public List<Tour> listAllTours() {
 		return tourRepo.findAll();
 	}
+	
+	@Override
+	public Tour createTour(Tour tour) {
+		if (tour.getName() == null) {
+			tour.setName("Bob Dobbs");
+		}
+		return tourRepo.saveAndFlush(tour);
+	}
+
+	@Override
+	public Boolean delete(int id) {
+		tourRepo.deleteById(id);
+		return !tourRepo.existsById(id);
+	}
 
 }
