@@ -90,6 +90,7 @@ Here are the links for Postman:
 |GET                  | `/api/comments`              |                          |List of comments         |Read
 |GET                  |`api/review/{id}`             |                          |View review by id        |Read
 |POST                 |`api/tours/{id}/reviews`      |JSON for new Tour         |Create review by tour id |Create
+|PATCH                |`api/reviews/{id}`            |JSON to update Review     |Update review            |Update  
 
 
 

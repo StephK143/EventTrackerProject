@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,7 +35,7 @@ public class ReviewController {
 
 	@GetMapping("reviews/{id}")
 	public Review getReviewById(@PathVariable int id, HttpServletResponse res) {
-		Review review = reviewServ.getReviewById(id);
+		Review review = reviewServ.findById(id);
 		if (review == null) {
 			res.setStatus(404);
 		}
@@ -42,10 +43,7 @@ public class ReviewController {
 	}
 
 	@PostMapping("tours/{tourId}/reviews")
-	public Review addReviewToTour(
-			@PathVariable int tourId,
-			@RequestBody Review review, 
-			HttpServletResponse resp, 
+	public Review addReviewToTour(@PathVariable int tourId, @RequestBody Review review, HttpServletResponse resp,
 			HttpServletRequest req) {
 		review = reviewServ.createReviewForTour(tourId, review);
 		try {
@@ -53,13 +51,29 @@ public class ReviewController {
 				resp.setStatus(404);
 			} else {
 				resp.setStatus(201);
-				StringBuffer url= req.getRequestURL();
+				StringBuffer url = req.getRequestURL();
 				resp.setHeader("Location", url.toString());
 			}
-		} catch(Exception e) {
+		} catch (Exception e) {
 			resp.setStatus(404);
 		}
 		return review;
-}
+	}
+
+	@PatchMapping("reviews/{reviewId}")
+	public Review updateReview(@PathVariable int id, @RequestBody Review review, HttpServletResponse resp) {
+		Review updated = null;
+
+		try {
+			updated = reviewServ.update(review, id);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			resp.setStatus(400);
+		}
+
+		return review;
+
+	}
 
 }
