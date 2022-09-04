@@ -35,7 +35,8 @@ This is a Ghost Tour tracker. Tours can be posted by users and then reviewed. Re
 
 ##  How to Run
 
-//TODO: URL of deployed app
+-  [EventTrackerProject URL](#54.176.46.29:8083/EventTrackerProject)
+
 - [Back to Top](#eventtracker)
 
 # Technologies
@@ -90,7 +91,8 @@ Here are the links for Postman:
 |GET                  | `/api/comments`              |                          |List of comments         |Read
 |GET                  |`api/review/{id}`             |                          |View review by id        |Read
 |POST                 |`api/tours/{id}/reviews`      |JSON for new Tour         |Create review by tour id |Create
-|PATCH                |`api/reviews/{id}`            |JSON to update Review     |Update review            |Update  
+|PATCH                |`api/reviews/{id}`            |JSON to update Review     |Update review            |Update
+|DELETE               |`api/reviews/{id}`            |                          |Delete review            |Delete  
 
 
 
@@ -102,6 +104,6 @@ Here are the links for Postman:
 - [Back to Top](#eventtracker)
 ## Challenges and Lessons Learned
 
-This project was our first with JPA and REST API's.
+
 
 - [Back to Top](#eventtracker)

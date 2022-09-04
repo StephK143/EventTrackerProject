@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -75,5 +76,31 @@ public class ReviewController {
 		return review;
 
 	}
+	
+	@DeleteMapping("reviews/{id}")
+	public Boolean deleteReview(
+			@PathVariable int id,
+			HttpServletResponse resp) {
+		Boolean deleted = reviewServ.deleteReview(id);
+		if (deleted) {
+			resp.setStatus(204);
+		} else {
+			resp.setStatus(404);
+		}
+		
+		return deleted;
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

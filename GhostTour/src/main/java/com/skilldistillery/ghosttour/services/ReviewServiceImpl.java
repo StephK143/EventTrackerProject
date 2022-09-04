@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import com.skilldistillery.ghosttour.entities.Review;
 import com.skilldistillery.ghosttour.entities.Tour;
@@ -66,4 +67,9 @@ public class ReviewServiceImpl implements ReviewService {
 		return r;
 	}
 
+	@Override
+	public boolean deleteReview(int id) {
+		reviewRepo.deleteById(id);
+		return !reviewRepo.existsById(id);
+	}
 }

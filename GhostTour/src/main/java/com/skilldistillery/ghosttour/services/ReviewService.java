@@ -17,4 +17,6 @@ public interface ReviewService {
 
 	Review findById(int id);
 
+	boolean deleteReview(int id);
+
 }
