@@ -82,18 +82,26 @@ This is a Ghost Tour tracker. Tours can be posted by users and then reviewed. Re
 
 ## REST Endpoints
 
-Here are the links for Postman:
+Postman routes:
 
-|   HTTP Verb Purpose |URI                            |Request Body              |Response Body            | Operation
-|---------------------|-------------------------------|--------------------------|-------------------------|-----------
-|GET                  | `/api/tours`                  |                          |List of tours            |Read
-|GET                  | `/api/reviews`                |                          |List of reviews          |Read
-|GET                  | `/api/comments`               |                          |List of comments         |Read
-|GET                  |`/api/review/{id}`             |                          |View review by id        |Read
-|POST                 |`/api/tours/{tourId}/reviews`  |JSON for new review       |Create review by tour id |Create
-|PUT                  |`/api/reviews/{reviewId}`      |JSON to update Review     |Update review            |Update
-|DELETE               |`/api/reviews/{id}`            |                          |Delete review            |Delete  
-|PUT                  |`/api/comments/{commentId}`    |JSON to update comments   |Update comment           |update
+|   HTTP Verb Purpose |URI                                |Request Body              |Response Body            | Operation
+|---------------------|-----------------------------------|--------------------------|-------------------------|-----------
+|POST                 |`/api/tours`                       |JSON for new tour         |Create tour              |Create
+|POST                 |`/api/tours/{tourId}/reviews`      |JSON for new review       |Create review by tour id |Create
+|POST                 |`/api/reviews/{reviewId}/comments` |JSON for new comment      |Create comment for review|Create
+|GET                  |`/api/tours`                       |                          |List of tours            |Read
+|GET                  |`/api/reviews`                     |                          |List of reviews          |Read
+|GET                  |`/api/comments`                    |                          |List of comments         |Read
+|GET                  |`/api/review/{id}`                 |                          |View review by id        |Read
+|PUT                  |`/api/tours/{tourId}`              |JSON to update tour       |Update tour              |Update      
+|PUT                  |`/api/reviews/{reviewId}`          |JSON to update review     |Update review            |Update
+|PUT                  |`/api/comments/{commentId}`        |JSON to update comments   |Update comment           |Update
+|DELETE               |`/api/tours/{id}`                  |                          |Delete tour              |Delete
+|DELETE               |`/api/reviews/{id}`                |                          |Delete review            |Delete
+|DELETE               |`/api/comments/{id}`               |                          |Delete comment           |Delete
+
+
+
 
 
 

@@ -14,6 +14,8 @@ public interface TourService {
 	Tour createTour(Tour tour);
 
 	Boolean delete(int id);
+
+	Tour updateTour(Tour tour, int tourId);
 	
 	
 }
