@@ -11,6 +11,8 @@ public interface CommentService {
 
 	List<Comment> listAllComments();
 	
+	List<Comment> getAllCommentsByPostId(int tourId, int reviewId);
+	
 	Comment createCommentforReview(int reviewId, Comment comment);
 		
 	Comment updateComment(Comment comment, int reviewId);

@@ -1,6 +1,6 @@
 # EventTracker
 
-- [EventTracker](#eventtracker)
+- [Ghost Tours](#eventtracker)
   - [Description](#description)
   - [Topics](#topics)
   - [How to Run](#how_to_run)
@@ -14,7 +14,7 @@
 
 ## Description
 
-This is a Ghost Tour tracker. Tours can be posted by users and then reviewed. Reviews can have comments added.
+This is the backend for a (coming soon) full-stack project that tracks ghost tours and reviews. With full CRUD functionality  tours can be posted by users and then reviewed. Reviews can have comments added.
 
 - [Back to Top](#eventtracker)
 
@@ -35,7 +35,7 @@ This is a Ghost Tour tracker. Tours can be posted by users and then reviewed. Re
 
 ##  How to Run
 
--  [EventTrackerProject URL](#54.176.46.29:8083/EventTrackerProject)
+-  [EventTrackerProject URL](#http://54.176.46.29:8083/EventTrackerProject)
 
 - [Back to Top](#eventtracker)
 
@@ -43,11 +43,14 @@ This is a Ghost Tour tracker. Tours can be posted by users and then reviewed. Re
 
 -   REST API
 -   JSON
+-   Postman
 -   MySQL 5.7
 -   Spring Web MVC Framework
+-   Java Persistance API
 -   JPA
 -   JPQL
 -   JUnit 5
+-   Hibernate
 -   Bootstrap 5.2
 -   CSS
 -   JSP
@@ -57,9 +60,7 @@ This is a Ghost Tour tracker. Tours can be posted by users and then reviewed. Re
 -   Git
 -   Github
 -   Spring Tool Suite 4
--   Slack
--   Zoom
--   macOS on Silicon
+-   macOS on Monterey
 
 - [Back to Top](#eventtracker)
 
@@ -111,8 +112,8 @@ Postman routes:
 [![](https://mermaid.ink/img/pako:eNqtU8tuwyAQ_JXVnpMf8LX1oYc0Upq0F0sWNRsHyYAFy8Gy_e-FxqniyqkatSshYGd4zCz0WFlJmCG5RyVqJ3Rh4Ctujffbww6GYb22Pezy16f8DTIo8CQ8aGG6Aq_JZ3o_T6VQhkHJed6zU6YGIzQtApXibhHwLHh5idKi_oaMV9NrZNKSlA09PGw3m_x5_4O0M_8-aay4oftEkxaqWUQk-cqplpU1c1za8N4QtE5VVLbkUvPWwPIu0bqychQ7-VsLLyrZBlcmqbcdjjFZ-V-PwGpNhv9abQBcoSYX3ZXxB3xerkA-UTwWU9ElHUVoONV8jNTQJqNyqdg6zI6i8bRCEdi-dKbCjF2gC2n6SxNr_ACZH-YW)](https://mermaid.live/edit#pako:eNqtU8tuwyAQ_JXVnpMf8LX1oYc0Upq0F0sWNRsHyYAFy8Gy_e-FxqniyqkatSshYGd4zCz0WFlJmCG5RyVqJ3Rh4Ctujffbww6GYb22Pezy16f8DTIo8CQ8aGG6Aq_JZ3o_T6VQhkHJed6zU6YGIzQtApXibhHwLHh5idKi_oaMV9NrZNKSlA09PGw3m_x5_4O0M_8-aay4oftEkxaqWUQk-cqplpU1c1za8N4QtE5VVLbkUvPWwPIu0bqychQ7-VsLLyrZBlcmqbcdjjFZ-V-PwGpNhv9abQBcoSYX3ZXxB3xerkA-UTwWU9ElHUVoONV8jNTQJqNyqdg6zI6i8bRCEdi-dKbCjF2gC2n6SxNr_ACZH-YW)
 
 - [Back to Top](#eventtracker)
-## Challenges and Lessons Learned
-
+## Lessons Learned
+This project allowed me to get more practice with REST API's and Postman. See how just the backend can be built out rather than the whole project was very helpful. I learned a great deal about Mermaid for creating UML Diagrams to incorporate into my README.
 
 
 - [Back to Top](#eventtracker)

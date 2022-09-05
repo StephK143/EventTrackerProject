@@ -42,6 +42,18 @@ public class CommentController {
 		return comment;
 	}
 	
+	@GetMapping("tours/{tourId}/reviews/{reviewId}/comments")
+	public List<Comment> getAllCommentsByTourId(
+			@PathVariable int tourId, 
+			@PathVariable int reviewId,
+			HttpServletResponse resp) {
+		List<Comment> comments = commentServ.getAllCommentsByPostId(tourId, reviewId);
+		if (comments == null) {
+			resp.setStatus(404);
+		}
+		return comments;
+	}
+	
 	@PostMapping("reviews/{reviewId}/comments")
 	public Comment addCommentToReview(
 			@PathVariable int reviewId, 

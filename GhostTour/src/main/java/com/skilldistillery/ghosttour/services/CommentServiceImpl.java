@@ -66,4 +66,10 @@ public class CommentServiceImpl implements CommentService {
 		return !commentRepo.existsById(id);
 	}
 
+	@Override
+	public List<Comment> getAllCommentsByPostId(int tourId, int reviewId) {
+
+		return commentRepo.findByTourId(tourId);
+	}
+
 }
