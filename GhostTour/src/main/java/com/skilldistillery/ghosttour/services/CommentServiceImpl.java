@@ -69,7 +69,7 @@ public class CommentServiceImpl implements CommentService {
 	@Override
 	public List<Comment> getAllCommentsByPostId(int tourId, int reviewId) {
 
-		return commentRepo.findByTourId(tourId);
+		return commentRepo.findByReviewTourId(tourId);
 	}
 
 }

@@ -9,6 +9,6 @@ import com.skilldistillery.ghosttour.entities.Comment;
 
 public interface CommentRepository extends JpaRepository<Comment, Integer> {
 
-	List<Comment> findByTourId(int id);
+	List<Comment> findByReviewTourId(int tourId);
 	
 }
