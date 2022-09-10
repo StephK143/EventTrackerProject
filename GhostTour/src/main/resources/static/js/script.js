@@ -18,6 +18,7 @@ function init() {
 		addNewTour(newTour);
 
 	});
+	
 	document.updateTourForm.updateTour.addEventListener('click', function(e) {
 		e.preventDefault();
 		console.log('updating tour');
@@ -32,18 +33,12 @@ function init() {
 		updateTour(updatedTour, tourId);
 
 	});
-	document.updateTourForm.updateTour.addEventListener('click', function(e) {
+	
+	document.deleteTourForm.deleteTour.addEventListener('click', function(e) {
 		e.preventDefault();
-		console.log('updating tour');
-		let tourId = updateTourForm.tourId.value;
-		let updatedTour = {
-
-			name: updateTourForm.name.value,
-			city: updateTourForm.city.value,
-			state: updateTourForm.state.value,
-		};
-
-		updateTour(updatedTour, tourId);
+		console.log('deleting tour');
+		let tourId = deleteTourForm.tourId.value;
+		deletingTour(tourId);
 
 	});
 };
@@ -78,6 +73,28 @@ function updateTour(updatedTour, tourId) {
 	console.log("updatedTourJSON: " + updatedTourJson);
 	xhr.send(updatedTourJson);
 };
+function deletingTour(tourId) {
+	
+	let xhr = new XMLHttpRequest();
+	xhr.open("DELETE", `api/tours/` + tourId);
+
+	xhr.setRequestHeader("Content-type", "application/json");
+
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState === 4) {
+			if (xhr.status == 200 || xhr.status == 204) {
+				console.log("tour deleted");
+			} else if (xhr.status === 400) {
+				displayError("Invalid Data");
+			}
+			else {
+				console.error("Error deleting tour:" + xhr.status);
+			}
+		}
+	}
+
+	xhr.send(tourId);
+};
 
 function loadAllTours() {
 	let xhr = new XMLHttpRequest();
@@ -104,10 +121,10 @@ function displayTours(tourList) {
 	dataDiv.appendChild(h3);
 	let ul = document.createElement('ul');
 	dataDiv.appendChild(ul);
-
+	console.log(tourList);
 	for (let tour of tourList) {
 		let li = document.createElement('li');
-		li.textContent = tour.name;
+		li.textContent = "Tour Id: " + tour.id + " Name of Tour: " + tour.name;
 		ul.appendChild(li);
 	}
 
@@ -142,6 +159,11 @@ function addNewTour(newTour) {
 function tourDetails(tour) {
 	let detailsDiv = document.getElementById('tourDetails');
 	detailsDiv.textContent = '';
+	let deleteMsg = "";
+	if (tour === null) {
+		deleteMsg.textContent = "This tour does not exist";
+		
+	}else {
 
 	let h1 = document.createElement('h1');
 	h1.textContent = "Details for this Tour";
@@ -160,7 +182,7 @@ function tourDetails(tour) {
 	li = document.createElement('li');
 	li.textContent = 'State: ' + tour.state;
 	ul.appendChild(li);
-
+}
 };
 
 function displayError(msg) {
