@@ -6,7 +6,10 @@ window.addEventListener('load', function() {
 function init() {
 
 	loadAllTours();
-
+	document.listAllDetails.addEventListener('click', function(e) {
+		e.preventDefault();
+		listAllToursWithDetails();
+	});
 	document.addTourForm.addTour.addEventListener('click', function(e) {
 		e.preventDefault();
 		console.log('adding tour');
@@ -113,6 +116,22 @@ function loadAllTours() {
 	xhr.send();
 };
 
+function listAllToursWithDetails() {
+	let xhr = new XMLHttpRequest();
+	xhr.open("GET", "api/tours");
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState === 4) {
+			if (xhr.status === 200) {
+				let toursJSON = xhr.responseText;
+				let tours = JSON.parse(toursJSON);
+				displayToursWithDetails(JSON.parse(xhr.responseText));
+			} else {
+				console.error("Error loading tours: " + xhr.status);
+			}
+		}
+	}
+	xhr.send();
+};
 function displayTours(tourList) {
 	let dataDiv = document.getElementById("tourList");
 	dataDiv.textContent = '';
@@ -126,6 +145,23 @@ function displayTours(tourList) {
 		let li = document.createElement('li');
 		li.textContent = "Tour Id: " + tour.id + " Name of Tour: " + tour.name;
 		ul.appendChild(li);
+	}
+
+};
+function displayToursWithDetails(tourList) {
+	let dataDiv = document.getElementById("tourList");
+	dataDiv.textContent = '';
+	let h3 = document.createElement('h3');
+	h3.textContent = "Tours: "
+	dataDiv.appendChild(h3);
+	let ul = document.createElement('ul');
+	dataDiv.appendChild(ul);
+	console.log(tourList);
+	for (let tour of tourList) {
+		let li = document.createElement('li');
+		li.textContent = "Tour Id: " + tour.id + " Name of Tour: " + tour.name +" City: " + tour.city + " State: " + tour.state;
+		ul.appendChild(li);
+		
 	}
 
 };
