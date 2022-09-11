@@ -35,7 +35,7 @@ This is the backend for a (coming soon) full-stack project that tracks ghost tou
 
 ##  How to Run
 
--  [EventTrackerProject URL](#http://54.176.46.29:8080/GhostTour/)
+-  [Ghost Tour URL](#http://54.176.46.29:8080/GhostTour/)
 
 - [Back to Top](#eventtracker)
 
