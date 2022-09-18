@@ -8,7 +8,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { TourListComponent } from './components/tour-list/tour-list.component';
+import { ReviewComponent } from './components/review/review.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     HomeComponent,
     NavigationComponent,
     TourListComponent,
+    ReviewComponent,
     NotFoundComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,97 @@
+<div *ngIf="!selected" class="review">
+  <div class="form"> -->
+
+    <h1><span>Review a tour here!</span></h1>
+
+
+      <form *ngIf="!selected" class="add"><span>
+        <label>Your Name:</label><input type="text" name="name" [(ngModel)]="newReview.name"/>
+        <label>Your email:</label><input type="text" name="email" [(ngModel)]="newReview.email"/><br>
+        <label>Tour Id:</label><input type="number" name="tourId" [(ngModel)]="newReview.tourId"/>
+           <br>
+
+          <label>Title:</label><input type="text" name="title" [(ngModel)]="newReview.title"/><br>
+        <label>Description:</label><br><textarea type="text"  rows="5" cols="80" id="TITLE"
+        name="description" [(ngModel)]="newReview.description"></textarea><br>
+        <label>Price per person:</label><input type="text" name="pricePerPerson" [(ngModel)]="newReview.pricePerPerson"/><br>
+        <label>Image:</label><input type="text" name="image" [(ngModel)]="newReview.image"/><br>
+
+
+        <button (click)="createReview(newReview)" class="btn btn-secondary">Add this Review</button>
+      </span>
+
+    </form>
+
+  </div>
+
+  <h1><span>List of Reviews</span></h1>
+  <table class="table hover table-bordered">
+    <thead>
+      <tr>
+        <td>Title</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let review of reviews" (click)="displayReview(review)">
+      <td>{{review.title}}</td>
+      <td>{{review.description}}</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+  <div *ngIf="selected && !editReview" class="review">
+    <br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+    <table class="table2 hover table-bordered" >
+      <thead>
+        <tr>
+          <td>Name of Tour</td>
+        <td>Description</td>
+        <td>Price Per Person</td>
+        </tr>
+      </thead>
+      <tbody>
+        <td>{{selected.description}} </td>
+          <td>{{selected.pricePerPerson}}</td>
+        </tbody>
+      </table><br>
+      <button class=" btn btn-secondary" (click)="selected=null">Back</button>
+      <button class="btn btn-secondary" (click)="setEditReview()" editReview = true>Edit this review</button>
+      <button class="btn btn-danger"(click)="deleteReview(selected.id)" >Delete</button><br><br><br>
+      <div  class="imagediv">
+        <img [src]="selected.image"/>
+      </div>
+  </div>
+
+
+<div >
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+  <form *ngIf="selected && editReview" class="review">
+    <input type="text" name="name" [(ngModel)]="editReview.name"/><br>
+    <input type="text" name="city" [(ngModel)]="editReview.description"/><br>
+    <input type="text" name="state" [(ngModel)]="editReview.pricePerPerson"/><br>
+    <input type="text" name="image" [(ngModel)]="editReview.image"/><br>
+
+    <button (click)="updateReview(editReview)" class="btn btn-secondary">Save</button>
+    <button (click)="editReview = null" class="btn btn-danger">Cancel</button>
+
+
+  </form>
+</div>

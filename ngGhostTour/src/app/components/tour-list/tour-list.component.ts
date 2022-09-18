@@ -20,6 +20,7 @@ export class TourListComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadTours();
+    console.log(this.tours);
   }
 
   loadTours(): void {
@@ -71,7 +72,7 @@ export class TourListComponent implements OnInit {
 
         },
         error: (problem) => {
-          console.error('PokemonHttpComponent.createPokemon(): error adding pokemons:');
+          console.error('TourHttpComponent.createTour(): error adding tour:');
           console.error(problem);
         }
       }

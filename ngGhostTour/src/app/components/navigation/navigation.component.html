@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" font-family="fantasy" href="#">Ghost<br>Tours</a>
+    <a class="navbar-brand" font-family="fantasy" href="/home">Ghost<br>Tours</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,6 +11,12 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/tour-list']">List all tours</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/review']">List all reviews</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/comment']">List all comments</a>
         </li>
       </ul>
       <!-- <form class="d-flex" role="search">

@@ -10,7 +10,7 @@ export class Review {
   pricePerPerson: number;
   image: string;
   dateCreated: string;
-  tours: Tour[];
+  tourId: number;
   comments: Comment[];
 
 
@@ -24,7 +24,7 @@ export class Review {
     pricePerPerson: number = 0,
     image: string = "",
     dateCreated: string = "",
-    tours: Tour[] = [],
+    tourId: number = 0,
     comments: Comment[] = []
   ) {
     this.id = id;
@@ -35,7 +35,7 @@ export class Review {
     this.pricePerPerson = pricePerPerson;
     this.image = image;
     this.dateCreated = dateCreated;
-    this.tours = tours;
+    this.tourId = tourId;
     this.comments = comments;
   }
 }

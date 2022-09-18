@@ -38,3 +38,22 @@ input {
 .form {
   text-align: center;
 }
+
+.review {
+
+  background-image: url("src/addpicture.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 1000px;
+  background-size: cover;
+  width: 100%;
+}
+.comment {
+
+  background-image: url("src/addpicture.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 1000px;
+  background-size: cover;
+  width: 100%;
+}

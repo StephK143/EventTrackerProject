@@ -1,0 +1,87 @@
+<div *ngIf="!selected" class="comment">
+  <div class="form">
+
+    <h1><span>Add Comments</span></h1>
+
+    <form *ngIf="!selected" class="add">
+      <label>Review Id:</label><input type="text" name="reviewId" [(ngModel)]="newComment.reviewId"/><br>
+      <label>Your name:</label><input type="text" name="name" [(ngModel)]="newComment.name"/><br>
+      <label>Comment:</label><input type="text" name="comment" [(ngModel)]="newComment.comment"/><br>
+      <label>Image:</label><input type="text" name="image" [(ngModel)]="newComment.image"/><br>
+
+      <button (click)="createComment(newComment)" class="btn btn-secondary">Post comment</button>
+
+    </form>
+  </div>
+
+  <h1><span>List of Comments</span></h1>
+  <table class="table hover table-bordered">
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>comment</td>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let comment of comments" (click)="displayComment(comment)">
+      <td>{{comment.name}}</td>
+      <td>{{comment.comment}}</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+  <div *ngIf="selected && !editComment" class="tour-details">
+    <br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+    <table class="table2 hover table-bordered" >
+      <thead>
+        <tr>
+          <td>Review Id</td>
+          <td>Name</td>
+          <td>State</td>
+        </tr>
+      </thead>
+      <tbody>
+        <td>{{selected.reviewId}} </td>
+        <td>{{selected.name | uppercase}}</td>
+          <td>{{selected.comment}}</td>
+        </tbody>
+      </table><br>
+      <button class=" btn btn-secondary" (click)="selected=null">Back</button>
+      <button class="btn btn-secondary" (click)="setEditComment()" editTour = true>Edit this tour</button>
+      <button class="btn btn-danger"(click)="deleteComment(selected.id)" >Delete</button><br><br><br>
+      <div  class="imagediv">
+        <img [src]="selected.image"/>
+      </div>
+  </div>
+
+
+<div >
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+  <form *ngIf="selected && editComment">
+    <input type="text" name="name" [(ngModel)]="editComment.name"/><br>
+    <input type="text" name="city" [(ngModel)]="editComment.comment"/><br>
+    <input type="text" name="image" [(ngModel)]="editComment.image"/><br>
+
+    <button (click)="updateComment(editComment)" class="btn btn-secondary">Save</button>
+    <button (click)="editComment = null" class="btn btn-danger">Cancel</button>
+
+
+  </form>
+</div>
