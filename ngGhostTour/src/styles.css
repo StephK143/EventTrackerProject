@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+
+
+	background-image: url("src/HauntedHouse.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	height:100vh;
+	background-size: cover;
+
+}
+
+.tour-list {
+
+  background-image: url("src/cemetary.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 3000px;
+	background-size: cover;
+  width: 100%;
+}
+
+.tour-details {
+  padding-left: 150px;
+  background-image: url("src/cemetary.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	height:740px;
+	background-size: cover;
+
+}
+
+input {
+  background-color: #cccccc;
+}
+
+.form {
+  text-align: center;
+}

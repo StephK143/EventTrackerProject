@@ -1,0 +1,94 @@
+
+
+<div *ngIf="!selected" class="tour-list">
+  <div class="form">
+
+    <h1>Know of a great Tour?</h1>
+    <h2>Add it here:</h2>
+    <form *ngIf="!selected" class="add">
+      <label>Tour Name:</label><input type="text" name="name" [(ngModel)]="newTour.name"/><br>
+      <label>City:</label><input type="text" name="city" [(ngModel)]="newTour.city"/><br>
+      <label>State:</label><input type="text" name="state" [(ngModel)]="newTour.state"/><br>
+      <label>Image:</label><input type="text" name="image" [(ngModel)]="newTour.image"/><br>
+
+      <button (click)="createTour(newTour)" class="btn btn-secondary">Add this tour</button>
+
+    </form>
+  </div>
+
+  <h2>~List of Tours~</h2>
+  <table class="table hover table-bordered">
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>City</td>
+        <td>State</td>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let tour of tours" (click)="displayTour(tour)">
+      <td>{{tour.name}}</td>
+      <td>{{tour.city}}</td>
+      <td>{{tour.state}}</td>
+
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+  <div *ngIf="selected && !editTour" class="tour-details">
+    <br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+    <table class="table2 hover table-bordered" >
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>City</td>
+          <td>State</td>
+        </tr>
+      </thead>
+      <tbody>
+        <td>{{selected.name | uppercase}}</td>
+        <td>{{selected.city}} </td>
+          <td>{{selected.state }}</td>
+        </tbody>
+      </table><br>
+      <button class=" btn btn-secondary" (click)="selected=null">Back</button>
+      <button class="btn btn-secondary" (click)="setEditTour()" editTour = true>Edit this tour</button>
+      <button class="btn btn-danger"(click)="deleteTour(selected.id)" >Delete</button><br><br><br>
+      <div  class="imagediv">
+        <img [src]="selected.image"/>
+      </div>
+  </div>
+
+
+<div >
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+  <form *ngIf="selected && editTour">
+    <input type="text" name="name" [(ngModel)]="editTour.name"/><br>
+    <input type="text" name="city" [(ngModel)]="editTour.city"/><br>
+    <input type="text" name="state" [(ngModel)]="editTour.state"/><br>
+    <input type="text" name="image" [(ngModel)]="editTour.image"/><br>
+
+    <button (click)="updateTour(editTour)" class="btn btn-secondary">Save</button>
+    <button (click)="editTour = null" class="btn btn-danger">Cancel</button>
+
+
+  </form>
+</div>
+
