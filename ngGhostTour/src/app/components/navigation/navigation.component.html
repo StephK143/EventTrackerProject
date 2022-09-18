@@ -13,10 +13,10 @@
           <a class="nav-link" [routerLink]="['/tour-list']">List all tours</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" background-color="grey" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-secondary" type="submit">Search by State</button>
-      </form>
+      <!-- <form class="d-flex" role="search">
+        <input class="form-control" name="state" type="text" background-color="grey" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-secondary" type="submit" [routerLink]="['/tour-list']" >Search by State</button>
+      </form> -->
     </div>
   </div>
 </nav>

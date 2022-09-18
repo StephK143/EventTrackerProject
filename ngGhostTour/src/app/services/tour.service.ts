@@ -36,6 +36,17 @@ private url = this.baseUrl + 'api/tours';
     );
   }
 
+  listToursByState(state: String): Observable<Tour[]> {
+    return this.http.get<Tour[]>(this.url + 'state').pipe(
+      catchError((err: any) => {
+        console.log(err);
+        return throwError(
+          () => new Error('TourService.index(): error retrieving tour: ' + err)
+        );
+      })
+    );
+  }
+
   update(tour: Tour){
     return this.http.put<Tour>(this.url + '/' + tour.id, tour).pipe(
       catchError((err: any) => {

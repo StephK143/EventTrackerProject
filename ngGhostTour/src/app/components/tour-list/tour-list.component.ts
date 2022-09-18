@@ -35,6 +35,19 @@ export class TourListComponent implements OnInit {
       }
     );
   }
+  listToursByState(state: string) {
+    this.TourService.listToursByState(state).subscribe(
+      {
+        next: (tours) => {
+          this.tours = tours;
+        },
+        error: (problem) => {
+          console.log('TourHttpComponent.listToursByState(): error loading Tours:');
+          console.log(problem);
+        }
+      }
+    );
+  }
   reload() {
     this.TourService.index().subscribe(
     {
