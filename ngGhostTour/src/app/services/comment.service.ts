@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Comment } from '../models/comment';
 import { Review } from '../models/review';
 import { Tour } from '../models/tour';
@@ -12,8 +13,8 @@ import { Tour } from '../models/tour';
 export class CommentService {
 
   private baseUrl = 'http://localhost:8083/';
-  private url = this.baseUrl + 'api/comments';
-  private reviewUrl = this.baseUrl + 'api/reviews/';
+  private url = environment.baseUrl + 'api/comments';
+  private reviewUrl = environment.baseUrl + 'api/reviews/';
 
     constructor(
 

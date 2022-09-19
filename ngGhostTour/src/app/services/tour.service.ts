@@ -1,14 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Tour } from '../models/tour';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TourService {
-  private baseUrl = 'http://localhost:8083/';
-private url = this.baseUrl + 'api/tours';
+  // private baseUrl = 'http://localhost:8083/';
+private url = environment.baseUrl + 'api/tours';
 
   constructor(
 

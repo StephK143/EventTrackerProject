@@ -33,7 +33,7 @@
 </div>
 
 
-  <div *ngIf="selected && !editComment" class="tour-details">
+  <div *ngIf="selected && !editComment" class="details">
     <br>
 <br>
 <br>
@@ -56,7 +56,7 @@
         </tbody>
       </table><br>
       <button class=" btn btn-secondary" (click)="selected=null">Back</button>
-      <button class="btn btn-secondary" (click)="setEditComment()" editTour = true>Edit this tour</button>
+      <button class="btn btn-secondary" (click)="setEditComment()" editTour = true>Edit this comment</button>
       <button class="btn btn-danger"(click)="deleteComment(selected.id)" >Delete</button><br><br><br>
       <div  class="imagediv">
         <img [src]="selected.image"/>

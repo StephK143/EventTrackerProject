@@ -1,9 +1,33 @@
 table {
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(146, 148, 248, 0.4),
+    #cccccc,
+    #cccccc,
+    rgba(146, 148, 248, 0.4),
+    transparent
+
+  );
   font-size: large;
   font-weight: bold;
   border-color: black;
   border-width: thick;
   color: black;
+}
+
+h1 span {
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(146, 148, 248, 0.4),
+    #cccccc,
+    #cccccc,
+    rgba(146, 148, 248, 0.4),
+    transparent
+
+  );
+  border-radius: 20%;
 }
 
 .hover tbody tr:hover {

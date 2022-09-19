@@ -21,9 +21,9 @@ body {
   width: 100%;
 }
 
-.tour-details {
+.details {
   padding-left: 150px;
-  background-image: url("src/cemetary.jpg");
+  background-image: url("src/emptychair.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
 	height:740px;
